@@ -1,8 +1,8 @@
-⭐ Review & Rating App
+⭐ REVIEW & RATING APP
 
 A full-stack review and rating platform built using the MERN Stack that allows users to sign up, log in, and submit ratings and reviews for companies. The application helps users share experiences and explore company feedback in one place.
 
-📝 1. Project Title & Goal
+📝 Project Title & Goal
 
 Review & Rating App is a full-stack web application that enables users to securely authenticate and post reviews with star ratings for different companies. The goal of this project is to provide a centralized platform where users can evaluate and share feedback about organizations.
 
@@ -15,6 +15,7 @@ nodemon server.js
 npm install
 npm run dev
 
+This starts:
 Backend → http://localhost:5000
 Frontend → http://localhost:5173
 
@@ -24,9 +25,6 @@ From the root folder:
 
 npm install
 npm run dev
-
-This starts:
-
 
 ✨ Features
 
@@ -44,9 +42,15 @@ This starts:
 
 📝 Add and View Company Reviews
 
+👍 Like Reviews
+
+❤️ Dynamic Like Count per Review
+
 📊 Automatic Average Rating Calculation
 
-📈 Dynamic Review Count Display
+📈 Real-Time Review Count Display
+
+📉 Live Updated Company Rating
 
 📄 Detailed Company Profile Page
 
