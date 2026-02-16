@@ -10,23 +10,16 @@ import AddReview from "./pages/AddReview.jsx";
 
 
 function App() {
-  
-
   return (
     <BrowserRouter>
     <Header />
      <Routes>
          <Route path="/" element={<Home />} />
          <Route path="/add-company" element={<AddCompany />} />
-
          <Route path="/company/:id" element={<CompanyDetail />} />
          <Route path="/company/:id/review" element={<AddReview />} />
-
-
          <Route path="/signin" element={<SignIn />} />
          <Route path="/signup" element={<SignUp />} />
-
-       
      </Routes>
     </BrowserRouter>
   );

@@ -79,7 +79,8 @@ export default function AddCompany() {
             <option value="">Select City</option>
             <option value="Indore">Indore</option>
             <option value="Bhopal">Bhopal</option>
-            <option value="Mumbai">Mumbai</option>
+            <option value="Gurgoan">Gurgoan</option>
+            <option value="Pune">Pune</option>
           </select>
 
           <input

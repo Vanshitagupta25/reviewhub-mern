@@ -24,7 +24,7 @@ exports.addCompany = async(req,res) => {
 //search & filter funcationality
 exports.getCompanies = async (req, res) => {
   try {
-    const { search, city, location } = req.query;
+    const { search, city, location, sort } = req.query;
     let query = {};
 
     if (search) {
@@ -39,13 +39,22 @@ exports.getCompanies = async (req, res) => {
       query.location = { $regex: location, $options: "i" };
     }
 
+    let sortOption = {};
+    if (sort) {
+      if (sort.startsWith("-")) {
+        sortOption[sort.substring(1)] = -1;  
+      } else {
+        sortOption[sort] = 1;
+      }
+    }
+
     const companies = await Company.aggregate([
       { $match: query },
       {
         $lookup: {
-          from: "reviews", // MongoDB collection name
+          from: "reviews",
           localField: "_id",
-          foreignField: "companyId", // VERY IMPORTANT
+          foreignField: "companyId",
           as: "reviews",
         },
       },
@@ -55,6 +64,7 @@ exports.getCompanies = async (req, res) => {
           averageRating: { $avg: "$reviews.rating" },
         },
       },
+      {$sort: sortOption},
     ]);
 
     res.json(companies);
